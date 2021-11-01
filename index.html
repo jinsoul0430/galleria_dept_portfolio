@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>갤러리아 공식사이트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>  
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="main_header">
+                <h1 class=""><img src="./images/logo.svg" alt="갤러리아백화점로고"></h1>
+                <a href="" class="icon i_search"><span class="hidden">검색</span></a>
+                <a href="" class="icon i_user"><span class="hidden">로그인</span></a>
+                <a href="" class="icon i_menu"><span class="hidden">메뉴</span></a>
+            </div>
+            <nav class="">
+                <div class="nav_wrap">
+                    <div class="main_nav">
+                        <ul>
+                            <li>
+                                <a href="" class="nav_info">Store Info</a>
+                            </li>
+                            <li>
+                                <a href="" class="nav_con">G-Contents</a>
+                            </li>
+                            <li>
+                                <a href="" class="nav_card">Card·Membership</a>
+                            </li>
+                            <li>
+                                <a href="" class="nav_cult">G-Culture</a>
+                            </li>
+                            <li>
+                                <a href="" class="nav_story"># Story</a>
+                            </li>
+                            <li>
+                                <a href="" class="nav_my">My Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav_bg"></div>
+                    <div class="sub_nav">
+                        <div class="on_box nav_info">
+                            <ul class="sub_info">
+                                <li class="">
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>명품관</h2>
+                                            <p>LUXURY HALL</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p>세계적인 디자인 랜드마크로 글로벌 패션 트렌드를 제시하는 프리미엄 백화점</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>타임월드</h2>
+                                            <p>TIMEWORLD</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p>대전 둔산에 위치한 중부권 최대 규모의 프리미엄 백화점</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>광교</h2>
+                                            <p>GWANGGYO</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p>새로운 패러다임의 자연친화적 복합 문화 쇼핑공간</p>
+                                        </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>센터시티</h2>
+                                            <p>CENTERCITY</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p>세계적인 디자인 랜드마크로 중부권 최대 규모의 문화센터 및 트렌드를 제시하는 백화점</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>진주점</h2>
+                                            <p>JINJU</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p class="box_small">서부경남 지역<br>패션 1번점</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_wrap">
+                                        <div class="title_box">
+                                            <h2>GOURMET494<br/>한남</h2>
+                                            <p>HANNAM</p>
+                                        </div>
+                                        <div class="sub_box icon i_arrow">
+                                            <p class="box_small">갤러리아가 만든<br>복합공간</p>
+                                        </div>
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="on_box nav_con">
+                            <div class="con_wrap">
+                                <h2><span>G-Contents</span></h2>
+                                <div class="sub_menu box2">
+                                    <h3>GOURMET 494 HANNAM</h3>
+                                    <div class="line_box">
+                                        <ul class="menu_list">
+                                            <li><a href="">영업정보</a></li>
+                                            <li><a href="">층별안내</a></li>
+                                            <li><a href="">입점 브랜드</a></li>
+                                            <li><a href="">오시는길</a></li>
+                                            <li><a href="">지점소개</a></li>
+                                            <li><a href="">CURATING</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sub_menu box2">
+                                    <h3>Maison<br/>Galleria</h3>
+                                    <div class="line_box">
+                                        <ul class="menu_list">
+                                            <li><a href="">첫번째: 메종 갤러리아</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">지점소개</a></li>
+                                                    <li><a href="">이용안내</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul class="menu_list">
+                                            <li><a href="">두번째: 메종 갤러리아</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">지점소개</a></li>
+                                                    <li><a href="">이용안내</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="on_box nav_card">
+                            <div class="con_wrap">
+                                <h2><span>Card·Membership</span></h2>
+                                <div class="sub_menu box3 box3_1">
+                                    <div class="sub_group">
+                                        <h3 class="h3_narrow">카드<br/>소개</h3>
+                                        <div class="line_box">
+                                            <ul class="menu_list">
+                                                <li><a href="">갤러리아 카드</a></li>
+                                                <li><a href="">제휴카드</a></li>
+                                                <li><a href="">멤버쉽카드</a></li>
+                                                <li><a href="">카드이용안내</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sub_group">
+                                        <h3 class="h3_narrow">카드<br/>신청</h3>
+                                        <div class="line_box">
+                                            <ul class="menu_list">
+                                                <li><a href="">신규카드 신청</a></li>
+                                                <li><a href="">추가/교체 신청</a></li>
+                                                <li><a href="">가족카드 추가신청</a></li>
+                                                <li><a href="">카드 발급상황 조회</a></li>
+                                                <li><a href="">카드 수령 등록</a></li>
+                                                <li><a href="">카드 재발급 신청</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub_menu box3 box3_2">
+                                    <div class="sub_group">
+                                        <h3>멤버십<br/>마일리지</h3>
+                                        <div class="line_box">
+                                            <ul class="menu_list">
+                                                <li><a href="">갤러리아 마일리지</a></li>
+                                                <li><a href="">웨딩 마일리지</a></li>
+                                                <li><a href="">우수고객 혜택 안내</a></li>                                        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sub_group">
+                                        <h3>상품권<br/>기프트 카드</h3>
+                                        <div class="line_box">
+                                            <ul class="menu_list">
+                                                <li><a href="">상품권 소개</a></li>
+                                                <li><a href="">상품권 구입 안내</a></li>
+                                                <li><a href="">기프트 카드</a></li>                                        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sub_group">
+                                        <h3>G캐시</h3>
+                                        <div class="line_box">
+                                            <ul class="menu_list">
+                                                <li><a href="">G캐시 소개</a></li>
+                                                <li><a href="">이용안내</a></li>                                   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub_menu box3 box3_3">
+                                    <h3>나의<br/>결제정보</h3>
+                                    <div class="line_box inner_box">
+                                        <ul class="menu_list">
+                                            <li><a href="">카드이용내역</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">청구서 조회</a></li>
+                                                    <li><a href="">이용내역 조회</a></li>
+                                                    <li><a href="">결제예정금액 조회</a></li>
+                                                    <li><a href="">카드대금 바로 결제</a></li>
+                                                    <li><a href="">입금ㆍ환급 내역 조회</a></li>
+                                                    <li><a href="">이용한도 조회ㆍ변경</a></li>
+                                                    <li><a href="">소득공제내역 조회</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="">카드 정보 관리</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">보유카드 현황 조회</a></li>
+                                                    <li><a href="">카드 회원정보 변경</a></li>
+                                                    <li><a href="">카드 비밀번호 변경</a></li>
+                                                    <li><a href="">결제일 변경</a></li>
+                                                    <li><a href="">결제계좌 변경</a></li>
+                                                    <li><a href="">SMS 서비스 신청정지ㆍ해제</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul class="menu_list">
+                                            <li><a href="">마일리지 조회</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">갤러리아 마일리지 조회</a></li>
+                                                    <li><a href="">웨딩 마일리지 조회</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="">G캐시 조회</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="on_box nav_cult">
+                            <div class="con_wrap">
+                                <h2><span>G-Culture</span></h2>
+                                <div class="sub_menu box2">
+                                    <h3>문화센터</h3>
+                                    <div class="line_box">
+                                        <ul class="menu_list">
+                                            <li><a href="">문화센터 안내</a></li>
+                                            <li><a href="">수강신청</a></li>
+                                            <li><a href="">추천강좌</a></li>
+                                            <li><a href="">나의 강좌관리</a>
+                                                <ul class="sub_list">
+                                                    <li><a href="">수강내역확인</a></li>
+                                                    <li><a href="">자녀회원관리</a></li>
+                                                    <li><a href="">관심강좌</a></li>
+                                                    <li><a href="">관심분야</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sub_menu box2">
+                                    <h3 class="h3_wide">센터시티<br/>ART HALL-G</h3>
+                                    <div class="line_box">
+                                        <ul class="menu_list">
+                                            <li><a href="">이 달의 공연</a></li>
+                                            <li><a href="">Art Hall-G 소개</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="on_box nav_story">
+                            <div class="con_wrap">
+                                <h2><span>#Story</span></h2>
+                                <div class="sub_menu">
+                                    <ul class="story_list">
+                                        <li><a href="">Style Story</a></li>
+                                        <li><a href="">Design story</a>
+                                            <ul class="story_sub">
+                                                <li><a href="">Collaboration History</a></li>
+                                                <li><a href="">Christmas History</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Right! the galleria</a></li>
+                                        <li><a href="">FAURE LE PAGE</a></li>
+                                        <li><a href="">AWARDS</a>
+                                            <ul class="story_sub">
+                                                <li><a href="">2020 AWARDS</a></li>
+                                            </ul>    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="on_box nav_my">
+                            <div class="con_wrap">
+                                <h2><span>My Account</span></h2>
+                                <div class="sub_menu box2_2">
+                                    <ul class="account_sub">
+                                        <li><a href="">내 정보 한눈에 보기</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub_menu box2_2">
+                                    <ul class="account_sub">
+                                        <li><a href="">선호지점 관리</a></li>
+                                        <li><a href="">홈페이지 회원정보 수정</a></li>
+                                        <li><a href="">비밀번호 변경</a></li>
+                                        <li><a href="">회원 탈퇴</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="scroll_box">
+                <div class="scroll_con1">
+                    <div class="visual">
+                        <video autoplay loop muted>
+                            <source src="./images/main_video.mp4" type="video/mp4" autoplay>
+                        </video>
+                        <div class="text_box">
+                            <p>URBAN BLOOM</p>
+                            <h2>갤러리아타임월드</h2>
+                            <a href="" class="discover">DISCOVER</a>
+                        </div>
+                    </div>
+                    <div class="box_container1">
+                        <div class="dept">
+                            <ul class="slider">
+                                <li>
+                                    <img src="./images/slide1_1.jpg" alt="명품관">
+                                    <div class="slide_title">
+                                        <h3>명품관</h3>
+                                        <a href="" class="icon i_star"><span class="hidden">선호지점</span></a>
+                                    </div>
+                                    <div class="slide_con">
+                                        <div class="slide_info">
+                                            <ul>
+                                                <li>
+                                                    <p class="s_info_title">오늘 영업시간</p>
+                                                    <p class="s_info_data">
+                                                        <span class="data_time">10:30</span><span class="data_fix"> AM</span> - <span class="data_time">08:00</span><span class="data_fix"> PM</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">휴점일</p>
+                                                    <p class="s_info_data closed_data"><span class="closed_day">-</span></p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">대표전화</p>
+                                                    <p class="s_info_data"><span class="tel">02.3449.4114</span></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slide_link">
+                                            <ul>
+                                                <li><a href="" class="icon i_stairs"><span>층별안내</span></a></li>
+                                                <li><a href="" class="icon i_book"><span>e-DM</span></a></li>
+                                                <li><a href="" class="icon i_location"><span>오시는길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./images/slide1_2.jpg" alt="타임월드">
+                                    <div class="slide_title">
+                                        <h3>타임월드</h3>
+                                        <a href="" class="icon i_star"><span class="hidden">선호지점</span></a>
+                                    </div>
+                                    <div class="slide_con">
+                                        <div class="slide_info">
+                                            <ul>
+                                                <li>
+                                                    <p class="s_info_title">오늘 영업시간</p>
+                                                    <p class="s_info_data">
+                                                        <span class="data_time">10:30</span><span class="data_fix"> AM</span> - <span class="data_time">08:30</span><span class="data_fix"> PM</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">휴점일</p>
+                                                    <p class="s_info_data closed_data"><span class="closed_day">06.14 월</span></p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">대표전화</p>
+                                                    <p class="s_info_data"><span class="tel">042.480.5000</span></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slide_link">
+                                            <ul>
+                                                <li><a href="" class="icon i_stairs"><span>층별안내</span></a></li>
+                                                <li><a href="" class="icon i_book"><span>e-DM</span></a></li>
+                                                <li><a href="" class="icon i_location"><span>오시는길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./images/slide1_3.jpg" alt="광교">
+                                    <div class="slide_title">
+                                        <h3>광교</h3>
+                                        <a href="" class="icon i_star"><span class="hidden">선호지점</span></a>
+                                    </div>
+                                    <div class="slide_con">
+                                        <div class="slide_info">
+                                            <ul>
+                                                <li>
+                                                    <p class="s_info_title">오늘 영업시간</p>
+                                                    <p class="s_info_data">
+                                                        <span class="data_time">10:30</span><span class="data_fix"> AM</span> - <span class="data_time">08:30</span><span class="data_fix"> PM</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">휴점일</p>
+                                                    <p class="s_info_data closed_data"><span class="closed_day">-</span></p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">대표전화</p>
+                                                    <p class="s_info_data"><span class="tel">031.5174.7114</span></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slide_link">
+                                            <ul>
+                                                <li><a href="" class="icon i_stairs"><span>층별안내</span></a></li>
+                                                <li><a href="" class="icon i_book"><span>e-DM</span></a></li>
+                                                <li><a href="" class="icon i_location"><span>오시는길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./images/slide1_4.jpg" alt="센터시티">
+                                    <div class="slide_title">
+                                        <h3>센터시티</h3>
+                                        <a href="" class="icon i_star"><span class="hidden">선호지점</span></a>
+                                    </div>
+                                    <div class="slide_con">
+                                        <div class="slide_info">
+                                            <ul>
+                                                <li>
+                                                    <p class="s_info_title">오늘 영업시간</p>
+                                                    <p class="s_info_data">
+                                                        <span class="data_time">10:30</span><span class="data_fix"> AM</span> - <span class="data_time">08:30</span><span class="data_fix"> PM</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">휴점일</p>
+                                                    <p class="s_info_data closed_data"><span class="closed_day">-</span></p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">대표전화</p>
+                                                    <p class="s_info_data"><span class="tel">041.559.9114</span></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slide_link">
+                                            <ul>
+                                                <li><a href="" class="icon i_stairs"><span>층별안내</span></a></li>
+                                                <li><a href="" class="icon i_book"><span>e-DM</span></a></li>
+                                                <li><a href="" class="icon i_location"><span>오시는길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./images/slide1_5.jpg" alt="진주">
+                                    <div class="slide_title">
+                                        <h3>진주점</h3>
+                                        <a href="" class="icon i_star"><span class="hidden">선호지점</span></a>
+                                    </div>
+                                    <div class="slide_con">
+                                        <div class="slide_info">
+                                            <ul>
+                                                <li>
+                                                    <p class="s_info_title">오늘 영업시간</p>
+                                                    <p class="s_info_data">
+                                                        <span class="data_time">10:30</span><span class="data_fix"> AM</span> - <span class="data_time">08:30</span><span class="data_fix"> PM</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">휴점일</p>
+                                                    <p class="s_info_data closed_data"><span class="closed_day">06.14 월</span></p>
+                                                </li>
+                                                <li>
+                                                    <p class="s_info_title">대표전화</p>
+                                                    <p class="s_info_data"><span class="tel">042.480.5000</span></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slide_link">
+                                            <ul>
+                                                <li><a href="" class="icon i_stairs"><span>층별안내</span></a></li>
+                                                <li><a href="" class="icon i_book"><span>e-DM</span></a></li>
+                                                <li><a href="" class="icon i_location"><span>오시는길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="post">
+                            <ul class="auto_slide">
+                                <li class="post_first">
+                                    <div class="text_cont">
+                                        <h3>더욱 안전한 쇼핑을 위한<br>방역, 소독 강화 안내</h3>
+                                        <p>갤러리아는 코로나19 바이러스 확산 예방을 위해<br>철저한 방역 및 소독 작업을 강화하고 있습니다.</p>
+                                        <a href="" class="more">MORE</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_cont">
+                                        <h3>MOSAIC</h3>
+                                        <p>SALON CASE & PINGUS 2016 <br>LIMITED 상품 판매</p>
+                                        <a href="" class="more">MORE</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_cont">
+                                        <h3>FAURE LE PAGE</h3>
+                                        <p>매혹을 위한 무장<br>(Armed For Seduction)</p>
+                                        <a href="" class="more">MORE</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll_con2">
+                    <div class="gourmet">
+                        <img src="./images/gourmet.jpg" alt="고메이494 한남">
+                        <div class="text_box">
+                            <h2>고메이494 한남</h2>
+                            <p>갤러리아가 만든 복합 공간<br>'Fine Living' GOURMET494 HANNAM</p>
+                            <a href="" class="discover">DISCOVER</a>
+                        </div>
+                    </div>
+                    <div class="box_container2">                        
+                        <div class="beauty">
+                            <img src="./images/editorial.jpg" alt="editorial">
+                            <div class="text_cont">
+                                <h2>SUMMER IS COMING</h2>
+                                <p>여름 시즌 준비하면 좋을 8가지 패션 아이템</p>
+                                <a href="" class="more">MORE</a>
+                            </div>
+                        </div>
+                        <div class="galleria_info">
+                            <img src="./images/right.jpg" alt="right 갤러리아">
+                            <div class="text_cont">
+                                <h2><img src="./images/right_the_galleria.png" alt="right the galleria"></h2>
+                                <p>갤러리아는 더 나은 미래를 위해 환경보호,<br>생명존중, 안전문화의 가치를 실천합니다</p>
+                                <a href="" class="more">MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_box">
+                <div class="footer_up">
+                    <h4>GALLERIA DIGITAL SPECIAL</h4>
+                    <ul class="footer_item">
+                        <li>
+                            <p class="footer_title icon i_download"><span>갤러리아백화점 APP</span></p>
+                            <p class="footer_cont">쇼핑정보 탐색부터 앱카드 이용 및<br>맞춤쿠폰까지<br>하나의 앱에서 이용하세요.</p>
+                            <div class="download">
+                                <ul>
+                                    <li>
+                                        <a href="" class="icon_font i_apple"><span>APP STORE</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="icon i_google"><span>GOOGLE PLAY</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="footer_title icon i_cash"><span>G캐시</span></p>
+                                <p class="footer_cont">지류상품권 대신 사은행사, 마일리지<br>리워드를 G캐시로 전화하여<br>갤러리아백화점/갤러리아몰에서<br>현금처럼 사용할 수 있습니다.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="footer_title icon i_mosaic"><span>MOSAIC</span></p>
+                                <p class="footer_cont">갤러리아만의 프리미엄 상품과 행사를<br>가장 먼저 만나보세요. 목표 수량을<br>달성하면 특별한 혜택을 드립니다.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_bottom">
+                    <div class="footer_left">
+                        <div class="footer_util">
+                            <ul>
+                                <li><a href="">회사소개</a></li>
+                                <li><a href="" class="bold">개인정보 처리방침</a></li>
+                                <li><a href="">사이트맵</a></li>
+                                <li><a href="">영상정보처리기기운영ㆍ관리 방침</a></li>
+                                <li><a href="">이용약관</a></li>
+                                <li><a href="">FAQ</a></li>
+                                <li><a href="">입점안내</a></li>
+                                <li><a href="">사회적책임</a></li>
+                                <li><a href="">고객의 소리</a></li>
+                                <li><a href="">한화갤러리아타임월드</a></li>
+                            </ul>
+                        </div>
+                       <div class="footer_info">
+                           <address>
+                               <span><img src="./images/footer-office.png" alt="한화솔루션 갤러리아 부문">대표이사 김은수</span>
+                               <span>서울시 영등포구 63로 50(여의도동) 63빌딩</span>
+                               <span class="br">사업자등록번호: 134-85-60007</span>
+                               <span>대표전화: 02.410.7114</span>
+                           </address>
+                           <p>
+                            © 2021. <img src="./images/footer-text.png" alt="Hanwha Solution Galleria Division">
+                           </p>
+                           <span>ALL RIGHTS RESERVED.</span>
+                       </div>
+                    </div>
+                    <div class="footer_right">
+                        <div class="sns">
+                            <p>FOLLOW US</p>
+                            <a href=""><i class="fab fa-facebook-f"><span class="hidden">페이스북</span></i></a>
+                            <a href=""><i class="fab fa-instagram"><span class="hidden">인스타그램</span></i></a>
+                            <a href=""><i class="fab fa-youtube"><span class="hidden">유튜브</span></i></a>
+                            <a href=""><i class="fas fa-envelope last"><span class="hidden">post</span></i></a>
+                        </div>
+                        <div class="family">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_aside">
+                   <div class="arrow">
+                       <a href="#" class="icon i_back"><span class="hidden">화살표</span></a>
+                   </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="./js/common.js"></script>
+</html>
